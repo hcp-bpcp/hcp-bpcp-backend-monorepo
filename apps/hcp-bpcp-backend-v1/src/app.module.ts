@@ -9,7 +9,6 @@ import { TodosModule } from './api/v1/todos/todos.module';
 import { CacheModule } from './api/v1/cache/cache.module';
 import { RedisQueueModule } from './database/redis/redis.queue.module';
 
-// import { WinstonMiddleware } from './logger/winston.middleware';
 import { WinstonMiddleware } from 'hcp-bpcp-module-common';
 import { LoggerModule } from 'hcp-bpcp-module-common';
 
