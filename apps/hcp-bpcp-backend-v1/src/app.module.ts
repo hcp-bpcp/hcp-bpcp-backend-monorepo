@@ -11,6 +11,7 @@ import { RedisQueueModule } from './database/redis/redis.queue.module';
 
 import { WinstonMiddleware } from 'hcp-bpcp-module-common';
 import { LoggerModule } from 'hcp-bpcp-module-common';
+import { UsersPrismaModule } from './api/v1/users-prisma/users-prisma.module';
 
 @Module({
   imports: [
@@ -30,6 +31,7 @@ import { LoggerModule } from 'hcp-bpcp-module-common';
     CacheModule,
     RedisQueueModule,
     LoggerModule,
+    UsersPrismaModule,
   ],
   controllers: [AppController],
   providers: [AppService],

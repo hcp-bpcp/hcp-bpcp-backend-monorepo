@@ -19,11 +19,18 @@ export class TodosService {
 
   async create(createTodoDto: CreateTodoDto): Promise<Todo> {
     const res = await this.todoModel.create(createTodoDto);
-    console.log('Add queue,,');
     await this.todoQueue.add('transcode', {
       todo: res,
     });
     return res;
+  }
+
+  async create_temporary(createTodoDto: CreateTodoDto): Promise<Todo> {
+    // const res = await this.todoModel.create(createTodoDto);
+    const res = await this.todoQueue.add('temporary', {
+      todo: createTodoDto,
+    });
+    return res.data;
   }
 
   async findAll(): Promise<Todo[]> {

@@ -6,7 +6,7 @@
   "root": "apps/hcp-bpcp-backend-monorepo",
   "compilerOptions": {
     "webpack": true,
-    "tsConfigPath": "apps/hcp-bpcp-backend-monorepo/tsconfig.json"
+    "tsConfigPath": "./tsconfig.json"
   },
   "projects": {
     "hcp-bpcp-backend-v1": {
@@ -16,15 +16,6 @@
       "sourceRoot": "apps/hcp-bpcp-backend-v1/src",
       "compilerOptions": {
         "tsConfigPath": "apps/hcp-bpcp-backend-v1/tsconfig.app.json"
-      }
-    },
-    "hcp-bpcp-module-common": {
-      "type": "application",
-      "root": "apps/hcp-bpcp-module-common",
-      "entryFile": "main",
-      "sourceRoot": "apps/hcp-bpcp-module-common/src",
-      "compilerOptions": {
-        "tsConfigPath": "apps/hcp-bpcp-module-common/tsconfig.app.json"
       }
     }
   }

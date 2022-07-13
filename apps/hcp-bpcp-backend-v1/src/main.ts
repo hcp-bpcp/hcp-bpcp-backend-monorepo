@@ -7,6 +7,7 @@ import { Queue } from 'bull';
 
 import { AppModule } from './app.module';
 import { SwaggerService } from 'hcp-bpcp-module-common';
+import { PrismaService } from './database/postgresql/prisma/prisma.service';
 
 const port = process.env.PORT;
 
@@ -35,6 +36,10 @@ async function bootstrap() {
 
   // Swagger setup
   new SwaggerService().setupSwagger(app);
+
+  // Prisma setup
+  const prismaService = app.get(PrismaService);
+  await prismaService.enableShutdownHooks(app);
 
   await app.listen(port);
   console.log(`Application is running on: ${await app.getUrl()}`);

@@ -12,9 +12,8 @@ import { TodosConsumer } from './consumers/todos.consumer';
     BullModule.registerQueue({
       name: 'todo-created',
     }),
-    TodosConsumer,
   ],
   controllers: [TodosController],
-  providers: [...todosProviders, TodosService],
+  providers: [...todosProviders, TodosService, TodosConsumer],
 })
 export class TodosModule {}

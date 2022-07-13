@@ -22,6 +22,11 @@ export class TodosController {
     return this.todosService.create(createTodoDto);
   }
 
+  @Post('/temporary')
+  create_temporary(@Body() createTodoDto: CreateTodoDto) {
+    return this.todosService.create_temporary(createTodoDto);
+  }
+
   @Get()
   findAll() {
     return this.todosService.findAll();
