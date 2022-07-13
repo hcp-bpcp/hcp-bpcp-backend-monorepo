@@ -1,5 +1,5 @@
-import { join } from 'path';
 import { DataSource } from 'typeorm';
+import { User } from '../../api/v1/users/entities/users.entity';
 
 export const postgresqlProviders = [
   {
@@ -14,7 +14,8 @@ export const postgresqlProviders = [
         database: 'postgres',
         schema: process.env.SCHEMA_NAME,
         // entities: ['dist/**/*.entity{.ts,.js}'],
-        entities: [join(__dirname, '../../../**', '*.entity.{ts,js}')],
+        // entities: [join(__dirname, '../../../**', '*.entity.{ts,js}')],
+        entities: [User],
         synchronize: Boolean(process.env.DATABASE_SYNCHRONIZE),
       });
 
