@@ -35,7 +35,7 @@
     "cache-manager-redis-store": "^2.0.0",
     "dotenv": "^16.0.1",
     "express-basic-auth": "^1.2.1",
-    "hcp-bpcp-module-common": "^1.0.0",
+    "hcp-bpcp-module-common": "^1.0.3",
     "js-yaml": "^4.1.0",
     "mongoose": "^6.4.4",
     "nest-winston": "1.6.0",

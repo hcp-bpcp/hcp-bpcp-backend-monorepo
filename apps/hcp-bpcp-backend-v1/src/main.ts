@@ -6,7 +6,7 @@ import { Queue } from 'bull';
 // import expressBasicAuth from 'express-basic-auth';
 
 import { AppModule } from './app.module';
-import { setupSwagger } from './utils/swagger';
+import { SwaggerService } from 'hcp-bpcp-module-common';
 
 const port = process.env.PORT;
 
@@ -34,7 +34,7 @@ async function bootstrap() {
   );
 
   // Swagger setup
-  setupSwagger(app);
+  new SwaggerService().setupSwagger(app);
 
   await app.listen(port);
   console.log(`Application is running on: ${await app.getUrl()}`);
