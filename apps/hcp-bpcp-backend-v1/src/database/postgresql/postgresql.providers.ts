@@ -1,3 +1,4 @@
+import { join } from 'path';
 import { DataSource } from 'typeorm';
 
 export const postgresqlProviders = [
@@ -12,7 +13,8 @@ export const postgresqlProviders = [
         password: process.env.DATABASE_PASSWORD,
         database: 'postgres',
         schema: process.env.SCHEMA_NAME,
-        entities: [__dirname + '/../../**/*.entity{.ts,.js}'],
+        // entities: ['dist/**/*.entity{.ts,.js}'],
+        entities: [join(__dirname, '../../../**', '*.entity.{ts,js}')],
         synchronize: Boolean(process.env.DATABASE_SYNCHRONIZE),
       });
 
